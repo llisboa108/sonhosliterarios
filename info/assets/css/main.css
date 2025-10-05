@@ -31,8 +31,12 @@
   --default-color: #F2F2F2; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #D9CDD2; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #D9183B; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --club-color: #261b62; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #312f2f; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+
+  --cor-base: #AE9DAB;
+  --textura-papel1: url('../img/textures/textura-branca.jpg');
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -60,6 +64,14 @@
   --contrast-color: #2a2727;
 }
 
+.bg-papel {
+  background-color: var(--background-color);
+  background-image: var(--textura-papel1);
+  background-repeat: repeat;
+  background-size: 100%; /* ajusta conforme precisa */
+  background-blend-mode: multiply; /* mistura a textura com a cor de base */
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -70,18 +82,25 @@
 --------------------------------------------------------------*/
 body {
   color: var(--default-color);
+
   background-color: var(--background-color);
+  background-image: var(--textura-papel1);
+  background-repeat: repeat;
+  background-size: 100%; /* ajusta conforme precisa */
+  background-blend-mode: multiply; /* mistura a textura com a cor de base */
+  background-attachment: fixed; /* 🔹 essa linha faz o fundo não rolar */
+
   font-family: var(--default-font);
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--club-color);
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: color-mix(in srgb, var(--club-color), transparent 25%);
   text-decoration: none;
 }
 
@@ -423,6 +442,17 @@ h6 {
   position: relative;
 }
 
+#footer-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#footer-link:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
 .footer .footer-top {
   padding: 50px 0;
   background-color: color-mix(in srgb, var(--footer-background-color) 90%, white 10%);
@@ -598,7 +628,6 @@ h6 {
 section,
 .section {
   color: var(--default-color);
-  background-color: var(--background-color);
   padding: 60px 0;
   scroll-margin-top: 80px;
   overflow: clip;
