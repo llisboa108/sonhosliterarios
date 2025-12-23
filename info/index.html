@@ -116,13 +116,24 @@
 
     <!-- Modal -->
     <div class="modal fade" id="xmasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog  modal-fullscreen-md-down">
+      <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <iframe id="displayZone" src="assets/docs/portifolio.pdf#toolbar=0&navpanes=0&scrollbar=0&view=fitH" type="application/pdf" frameborder="0" width="100%" height="1000"></iframe>
+            <div id="adobe-dc-view"></div>
+            <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+            <script type="text/javascript">
+              document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+                var adobeDCView = new AdobeDC.View({clientId: "bfcbf430737941d3ae87ba92d6b002d3", divId: "adobe-dc-view"});
+                adobeDCView.previewFile({
+                  content:{location: {url: "https://acrobatservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+                  metaData:{fileName: "Bodea Brochure.pdf"}
+                }, {});
+              });
+            </script>
+            <!-- <embed id="displayZone" src="assets/docs/portifolio.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" frameborder="0" width="100%" height="1000"></embed> -->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
