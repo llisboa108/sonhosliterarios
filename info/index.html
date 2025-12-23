@@ -116,7 +116,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="xmasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
+      <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -128,8 +128,8 @@
               document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
                 var adobeDCView = new AdobeDC.View({clientId: "bfcbf430737941d3ae87ba92d6b002d3", divId: "adobe-dc-view"});
                 adobeDCView.previewFile({
-                  content:{location: {url: "https://acrobatservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-                  metaData:{fileName: "Bodea Brochure.pdf"}
+                  content:{location: {url: "assets/docs/natalliterario.pdf"}},
+                  metaData:{fileName: "natalliterario.pdf"}
                 }, {});
               });
             </script>
